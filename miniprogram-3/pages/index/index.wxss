@@ -1,0 +1,31 @@
+/**index.wxss**/
+view swiper {
+  width: 100%;
+  height: 300rpx;
+}
+view swiper swiper-item image{
+  width: 100%;
+  height: 300rpx;
+}
+.title{
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+.price{
+  color: red;
+  font-size: 40rpx;
+  margin: 10rpx;
+}
+.home-container{
+  display: flex;
+  flex-wrap:wrap;
+}
+.home-container-page{
+  width:50%;
+  height:500rpx;
+}
+.home-img{
+  width:375rpx;
+  height:375rpx;
+}

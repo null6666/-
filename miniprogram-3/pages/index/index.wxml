@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view>
+  <swiper indicator-dots="true" indicator-color="gray" indicator-active-color="white" autoplay="true" circular="true" interval="3000">
+    <swiper-item wx:for="{{swiperGoodsList}}" wx:key="index">
+      <image src="/scr/img/{{item.name}}/{{item.name}}.jpg" mode="aspectFit" bindtap="onClickJump" data-goods="{{item.name}}" data-price="{{item.price}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="title">
+  精选推荐
+</view>
+<view class="home-container">
+  <view class="home-container-page" wx:for="{{goodsList}}" wx:key="index"> 
+    <image src="/scr/img/{{item.name}}/{{item.name}}.jpg" class="home-img" bindtap="onClickJump" data-goods="{{item.name}}" data-price="{{item.price}}"></image>
+    <view class="title">{{item.name}}</view>
+    <view class="price">￥{{item.price}}</view>
+  </view>
+</view>
+<view class="title">----------到底啦----------</view>

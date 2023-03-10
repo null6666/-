@@ -1,0 +1,52 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/goods/category/index",
+    "pages/goods/goods/index",
+    "pages/cart/index",
+    "pages/usercenter/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#0099FF",
+    "navigationBarTitleText": "警用品购物平台",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh":true,
+    "backgroundColor": "#0099FF"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#FF5F15",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "iconPath":"scr/img/icon/首页.png",
+        "selectedIconPath": "scr/img/icon/首页.png",
+        "pagePath":"pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath":"scr/img/icon/分类.png",
+        "selectedIconPath": "scr/img/icon/分类.png",
+        "pagePath":"pages/goods/category/index",
+        "text":"分类"
+      },
+      {
+        "iconPath":"scr/img/icon/购物车.png",
+        "selectedIconPath": "scr/img/icon/购物车.png",
+        "pagePath":"pages/cart/index",
+        "text":"购物车"
+      },
+      {
+        "iconPath":"scr/img/icon/主页.png",
+        "selectedIconPath": "scr/img/icon/主页.png",
+        "pagePath":"pages/usercenter/index",
+        "text":"个人中心"
+      }
+    ]
+  }
+}

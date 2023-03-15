@@ -1,30 +1,64 @@
 // pages/goods/goods/index.js
+var app = getApp()
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     goodsName : "",
+    goodsUrl : "",
     goodsPrice : "",
-    goodsList : {}
+    goodsList : {},
+    showDialog : 0,
+    quantity : 1
   },
   toCart(){
     wx.switchTab({
       url: '/pages/cart/index',
     })
   },
-  immeBuy(){
+  addToCart(e){
+    wx.switchTab({
+      url: '/pages/cart/index',
+    })
+    let goodsMsg = {goods: this.data.goodsName,price:this.data.goodsPrice,quantity:this.data.quantity,checked: false}
+    app.globalData.allCarts.push(goodsMsg)
+    //console.log(app.globalData.allCarts)
+  },
+  /**immeBuy(){
     wx.showToast({
       title: '购买成功',
       icon: 'success',
       duration: 2000
+    })
+  },*/
+  toggleDialog(){
+    this.setData({
+      showDialog : 1
+    })
+  },
+  closeDialog(){
+    this.setData({
+      showDialog : 0
+    })
+  },
+  plus(){
+    let that = this
+    this.setData({
+      quantity : that.data.quantity + 1
+    })
+  },
+  minus(){
+    let that = this
+    this.setData({
+      quantity : that.data.quantity - 1
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log(options)
+    //console.log(options)
     const fs = wx.getFileSystemManager()
     let that = this
     fs.readdir({
@@ -32,14 +66,15 @@ Page({
       success(res){
         //console.log(res.files)
         that.setData({
-          goodsList : res.files
+          goodsList : res.files,
+          goodsUrl : "/scr/img/"+options.id+"/"+res.files[0]
         })
         //console.log(that.data.goodsList)
       }
     })
     this.setData({
       goodsName : options.id,
-      goodsPrice : options.price
+      goodsPrice : options.price,
     })
     wx.setNavigationBarTitle({
       title: options.id

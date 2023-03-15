@@ -5,8 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    swiperGoodsList: [{name: "作训鞋",price: 100}, {name: "手电筒",price: 50}, {name:"腰带",price: 50}],
-    goodsList: [{name:"常服",price: 200},{name:"内衬",price: 100},{name:"冬大衣",price: 200},{name:"长衬",price: 100},{name:"v领长袖毛衣",price: 100},{name:"v领毛衣",price: 100}]
+    swiperGoodsList: [{name: "警用皮鞋",price: 100}, {name: "手电筒",price: 50}, {name:"腰带",price: 50}],
+    goodsList: [{name:"警帽",price: 50},{name:"公大书包",price: 100},{name:"冬大衣",price: 200},{name:"警用冬裤",price: 100},{name:"v领长袖毛衣",price: 100},{name:"v领毛衣",price: 100}]
   },
   onClickJump(event){
     wx.navigateTo({

@@ -6,6 +6,7 @@
     </swiper-item>
   </swiper>
 </view>
+<view class="separate"></view>
 <view class="title">
   精选推荐
 </view>

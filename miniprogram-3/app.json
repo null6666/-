@@ -12,7 +12,6 @@
     "navigationBarBackgroundColor": "#0099FF",
     "navigationBarTitleText": "警用品购物平台",
     "navigationBarTextStyle":"black",
-    "enablePullDownRefresh":true,
     "backgroundColor": "#0099FF"
   },
   "style": "v2",

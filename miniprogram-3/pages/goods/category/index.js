@@ -47,7 +47,7 @@ Page({
             child_id: 7,
             name: '短袖',
             price: 50,
-            image: "/scr/img/短袖/短袖1.jpg"
+            image: "/scr/img/短袖/短袖.jpg"
           }
         ]
       },
@@ -61,19 +61,19 @@ Page({
             child_id: 1,
             name: '常服裤子',
             price: 100,
-            image: "/scr/img/常服裤子/常服裤子1.jpg"
+            image: "/scr/img/常服裤子/常服裤子.jpg"
           },
           {
             child_id: 2,
             name: '执勤裤子',
             price: 100,
-            image: "/scr/img/执勤裤子/执勤裤子1.jpg"
+            image: "/scr/img/执勤裤子/执勤裤子.jpg"
           },
           {
             child_id: 3,
             name: '警用冬裤',
             price: 100,
-            image: "/scr/img/警用冬裤/警用冬裤1.jpg"
+            image: "/scr/img/警用冬裤/警用冬裤.jpg"
           }
         ]
       },
@@ -87,7 +87,7 @@ Page({
             child_id: 1,
             name: '警用皮鞋',
             price: 100,
-            image: "/scr/img/警用皮鞋/警用皮鞋1.jpg"
+            image: "/scr/img/警用皮鞋/警用皮鞋.jpg"
           },
           {
             child_id: 2,
@@ -106,13 +106,13 @@ Page({
             child_id: 1,
             name: '公大书包',
             price: 100,
-            image: "/scr/img/公大书包/公大书包1.jpg"
+            image: "/scr/img/公大书包/公大书包.jpg"
           },
           {
             child_id: 2,
             name: '警帽',
             price: 50,
-            image: "/scr/img/警帽/警帽1.jpg"
+            image: "/scr/img/警帽/警帽.jpg"
           },
           {
             child_id: 3,

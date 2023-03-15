@@ -7,6 +7,7 @@ App({
     wx.setStorageSync('logs', logs)
   },
   globalData: {
-    userInfo: ""
+    userInfo: "",
+    allCarts : [],
   }
 })

@@ -1,6 +1,10 @@
-<!--pages/login/login.wxml-->
-<view class="user-container">
-  <image class="user-img" src='{{userinfo.avatarUrl}}'></image>
-  <view>{{userinfo.nickName}}</view>
-  <button wx:if="{{!hasUserInfo && canIUseUserInfo}}" open-type="getUserInfo" bindtap="getUserInfo" class="userLogin" >点击登录</button>
+<view>
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </button> 
+  <form>
+    <view title="昵称">
+      <input type="nickname" class="weui-input" placeholder="请输入昵称"/>
+    </view>
+  </form>
 </view>

@@ -1,0 +1,15 @@
+/* pages/login/login.wxss */
+.user-container{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+.user-img{
+  width: 150rpx;
+  height: 150rpx;
+}
+.userLogin{
+  width: 50%;
+  box-sizing: none;
+  font-size: medium;
+}

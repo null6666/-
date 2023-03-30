@@ -62,6 +62,30 @@ Page({
       quantity : that.data.quantity - 1
     })
   },
+  toBuy(){
+    if(!app.globalData.addr.length){
+      wx.navigateTo({
+        url: '/pages/addr/addr',
+      })
+    }
+    else{
+      let goodsMsg = {goods: this.data.goodsName,price:this.data.goodsPrice,quantity:this.data.quantity,checked: true}
+      app.globalData.bought.push(goodsMsg)
+      this.updateBought()
+      wx.redirectTo({
+        url: '/pages/buy/buy',
+      })
+    }
+  },
+  updateBought(){
+    db.collection('user').where({
+      nickname : app.globalData.nickname
+    }).update({
+      data: {
+        bought : app.globalData.bought
+      },
+    })
+  } ,
   /**
    * 生命周期函数--监听页面加载
    */

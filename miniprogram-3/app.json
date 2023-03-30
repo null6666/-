@@ -6,7 +6,12 @@
     "pages/goods/category/index",
     "pages/goods/goods/index",
     "pages/cart/index",
-    "pages/usercenter/index"
+    "pages/usercenter/index",
+    "pages/addr/addr",
+    "pages/buy/buy"
+  ],
+  "requiredPrivateInfos": [
+    "chooseAddress"
   ],
   "window":{
     "backgroundTextStyle":"dark",

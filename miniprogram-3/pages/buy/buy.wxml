@@ -1,0 +1,30 @@
+<!--pages/buy/buy.wxml-->
+<scroll-view scroll-y="true">
+  <view wx:if="{{flag1}}">
+    <view class="separate"></view>
+    <view>收货信息：</view>
+    <view>姓名：{{addr[0].userName}}</view>
+    <view>电话：{{addr[0].telNumber}}</view>
+    <view>地址：{{addr[0].provinceName}}{{addr[0].cityName}}{{addr[0].countyName}}{{addr[0].detailInfo}}</view>
+    <view class="separate"></view>
+    <view class="separate"></view>
+    <view>已购买：</view>
+    <view wx:for="{{bought}}" wx:key="index">
+      <view class="cart_container">
+        <image class="item-image" src="/scr/img/{{item.goods}}/{{item.goods}}.jpg"></image>
+        <view class="column">
+          <text class="title">{{item.goods}}</text>
+          <view class="row">
+            <text class="sku-price">￥{{item.price}}</text>
+            <view class="quantity-position">
+              <text class="quantity">X{{item.quantity}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{flag2}}">请购买商品</view>
+  
+</scroll-view>
+

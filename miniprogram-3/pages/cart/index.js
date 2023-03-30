@@ -22,6 +22,15 @@ Page({
       },
     })
   } ,
+  updateBought(){
+    db.collection('user').where({
+      nickname : app.globalData.nickname
+    }).update({
+      data: {
+        bought : app.globalData.bought
+      },
+    })
+  } ,
   switchSelect(e){
     let i = e.target.dataset.selectindex
     let carts = this.data.carts
@@ -86,6 +95,64 @@ Page({
     }
     //console.log(totalMoney)
     return totalMoney
+  },
+  toBuy(){
+    let that = this
+    if(!app.globalData.allCarts.length){
+      wx.showToast({
+        title: '请选择商品加入购物车',
+        icon: "none",
+        duration: 1500,
+        mask: true
+      })
+    }
+    else{
+      if(!app.globalData.addr.length){
+        wx.navigateTo({
+          url: '/pages/addr/addr',
+        })
+      }
+      else{
+        if(app.globalData.allCarts.every((item)=>{return item.checked == false})){
+          wx.showToast({
+            title: '请勾选需要购买的商品',
+            icon: "none",
+            duration: 1500,
+            mask: true
+          })
+        }
+        else{
+          let cart = this.data.carts
+          let length = cart.length
+          for (let i = 0; i < length; i++) {
+            if(cart[i].checked == true){
+              app.globalData.bought.push(cart[i])
+            }
+          }
+          //console.log(app.globalData.bought)
+          for (let i = 0; i < length; i++) {
+            if(cart[i].checked == true){
+              cart.splice(i,1)
+              i = i-1
+              length = length - 1
+            }
+          }
+          //console.log(cart)
+          that.setData({
+            carts : cart,
+            isAllSelect : false,
+            totalMoney : 0
+          })
+          app.globalData.allCarts = cart
+          this.updateAllCarts()
+          this.updateBought()
+          wx.navigateTo({
+            url: '/pages/buy/buy',
+          })
+          //console.log(app.globalData.bought)
+        }
+      }
+    }
   },
   /**
    * 生命周期函数--监听页面加载

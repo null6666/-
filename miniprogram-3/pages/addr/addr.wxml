@@ -1,0 +1,10 @@
+<!--pages/addr/addr.wxml-->
+<view wx:if="{{flag1}}">
+  <view class="separate"></view>
+  <view>姓名：{{addr[0].userName}}</view>
+  <view>电话：{{addr[0].telNumber}}</view>
+  <view>地址：{{addr[0].provinceName}}{{addr[0].cityName}}{{addr[0].countyName}}{{addr[0].detailInfo}}</view>
+</view>
+<view wx:if="{{flag1}}" class="addAddress" bindtap="changeAddress">修改地址</view>
+<view wx:if="{{flag2}}" class="addAddress" bindtap="addAddress">新增地址</view>
+

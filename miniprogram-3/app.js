@@ -25,5 +25,7 @@ App({
   globalData: {
     nickname : "",
     allCarts : [],
+    addr : [],
+    bought : []
   }
 })

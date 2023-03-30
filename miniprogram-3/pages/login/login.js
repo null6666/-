@@ -9,7 +9,9 @@ Page({
     getName : false,
   },
   onLoad() {
-
+    wx.setNavigationBarTitle({
+      title: "登录"
+    })
   },
   onChooseAvatar(e) {
     const { avatarUrl } = e.detail 
@@ -48,13 +50,16 @@ Page({
                 nickname : this.data.nickname,
                 avatarUrl : this.data.avatarUrl,
                 allCarts : [],
-                bought : []
+                bought : [],
+                addr : []
               }
             })
           }
           else{
             //console.log(res.data[0].allCarts)
             app.globalData.allCarts = res.data[0].allCarts
+            app.globalData.addr = res.data[0].addr
+            app.globalData.bought = res.data[0].bought
             db.collection('user').where({
               nickname : app.globalData.nickname
             }).update({

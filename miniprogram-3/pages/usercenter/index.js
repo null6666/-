@@ -1,5 +1,6 @@
 // pages/usercenter/index.js
 var app = getApp()
+let db = wx.cloud.database()
 const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
 Page({
   /**
@@ -9,12 +10,16 @@ Page({
     avatarUrl : defaultAvatarUrl,
     nickname : ""
   },
-
+  jumpAddr(){
+    wx.navigateTo({
+      url: '/pages/addr/addr'
+    })
+   
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    let db = wx.cloud.database()
     /**db.collection('user').where({
       _openid: 'oCY1p5I4vLDmQOHSVeHvUHOXPF9A',
     })

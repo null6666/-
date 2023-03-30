@@ -1,0 +1,27 @@
+/* pages/addr/addr.wxss */
+page{  
+  display: flex;  
+  flex-direction: column;  
+  height: 100%; 
+}
+.addAddress{
+  margin: 0 auto;  
+  margin-top: 30px;  
+  width: 150px;  
+  height: 35px; 
+  border: 1px #000 solid;  
+  line-height: 35px;  
+  text-align: center; 
+  color: #000;  
+  border-radius: 5rpx;
+  display: block;
+}
+.product-name-wrap{
+  margin: 0px 10px; 
+  font-size: 14px; 
+  color: #404040;
+}
+.separate{
+  height: 20rpx;
+}
+

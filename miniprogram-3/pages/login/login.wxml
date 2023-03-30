@@ -3,11 +3,11 @@
     <image class="avatar" src="{{avatarUrl}}"></image>
   </button> 
   <form>
-    <view title="昵称">
-      <input	bindfocus="switch" type="nickname" class="weui-input" placeholder="请输入昵称"/>
+    <view>
+      <input bindinput="switch" type="nickname" placeholder="请输入昵称"/>
     </view>
   </form>
-  <button wx:if="{{getImg && getName}}"  bindtap="jump" class="userLogin">
-        点击登录
-    </button>
+  <button bindtap="login" class="userLogin">
+    登录
+  </button>
 </view>

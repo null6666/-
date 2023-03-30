@@ -1,5 +1,6 @@
 // pages/goods/goods/index.js
 var app = getApp()
+let db = wx.cloud.database()
 Page({
   /**
    * 页面的初始数据
@@ -23,6 +24,13 @@ Page({
     })
     let goodsMsg = {goods: this.data.goodsName,price:this.data.goodsPrice,quantity:this.data.quantity,checked: false}
     app.globalData.allCarts.push(goodsMsg)
+    db.collection('user').where({
+      nickname : app.globalData.nickname
+    }).update({
+      data: {
+        allCarts : app.globalData.allCarts
+      },
+    })
     //console.log(app.globalData.allCarts)
   },
   /**immeBuy(){

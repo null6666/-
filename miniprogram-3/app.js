@@ -8,8 +8,8 @@ App({
     wx.cloud.init({
       env: 'j1123958513-0ga33mq167df24a1'
     })
-    const db = wx.cloud.database()
-    /*db.collection('goods').add({
+    /*const db = wx.cloud.database()
+    db.collection('goods').add({
       data:{
         goods : "警帽"
       }
@@ -23,7 +23,7 @@ App({
     })*/
   },
   globalData: {
-    userInfo: "",
+    nickname : "",
     allCarts : [],
   }
 })

@@ -1,2 +1,3 @@
 <!--pages/usercenter/index.wxml-->
-<text>pages/usercenter/index.wxml</text>
+<image class="avatar" src="{{avatarUrl}}"></image>
+<text>{{nickname}}</text>

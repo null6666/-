@@ -1,1 +1,6 @@
 /* pages/usercenter/index.wxss */
+.avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+}

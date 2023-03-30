@@ -3,6 +3,7 @@ var app = getApp()
 let judgeAllSelect = ()=>{
   console.log(1)
 }
+let db = wx.cloud.database()
 Page({
   /**
    * 页面的初始数据
@@ -12,6 +13,15 @@ Page({
     isAllSelect : false,
     totalMoney : 0
   },
+  updateAllCarts(){
+    db.collection('user').where({
+      nickname : app.globalData.nickname
+    }).update({
+      data: {
+        allCarts : app.globalData.allCarts
+      },
+    })
+  } ,
   switchSelect(e){
     let i = e.target.dataset.selectindex
     let carts = this.data.carts
@@ -26,6 +36,7 @@ Page({
       totalMoney
     })
     app.globalData.allCarts = carts
+    this.updateAllCarts()
   },
   allSelect(){
     let isAllSelect = !this.data.isAllSelect
@@ -40,6 +51,7 @@ Page({
       totalMoney
     })
     app.globalData.allCarts = carts
+    this.updateAllCarts()
   },
   plus(e){
     let i = e.target.dataset.quantityindex
@@ -51,6 +63,7 @@ Page({
       totalMoney
     })
     app.globalData.allCarts = carts
+    this.updateAllCarts()
   },
   minus(e){
     let i = e.target.dataset.quantityindex
@@ -62,6 +75,7 @@ Page({
       totalMoney
     })
     app.globalData.allCarts = carts
+    this.updateAllCarts()
   },
   calculateTotalMoney(carts){
     let totalMoney = 0
@@ -99,7 +113,7 @@ Page({
     //console.log(this.data.isAllSelect)
     if(this.data.carts.length){
       isAllSelect = this.data.carts.every((item)=>{
-        console.log(item)
+        //console.log(item)
         return item.checked
       })
     }
@@ -109,8 +123,6 @@ Page({
       isAllSelect,
       totalMoney
     })
-    
-
   },
   /**
    * 生命周期函数--监听页面隐藏

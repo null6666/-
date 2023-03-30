@@ -65,7 +65,8 @@ Page({
   plus(e){
     let i = e.target.dataset.quantityindex
     let carts = this.data.carts
-    carts[i].quantity += 1
+    if (carts[i].quantity == 0 || carts[i].quantity>= 20) return
+    carts[i].quantity++
     let totalMoney = this.calculateTotalMoney(carts)
     this.setData({
       carts,
@@ -77,7 +78,8 @@ Page({
   minus(e){
     let i = e.target.dataset.quantityindex
     let carts = this.data.carts
-    carts[i].quantity -= 1
+    if (carts[i].quantity == 0) return
+    carts[i].quantity--
     let totalMoney = this.calculateTotalMoney(carts)
     this.setData({
       carts,
@@ -88,11 +90,11 @@ Page({
   },
   calculateTotalMoney(carts){
     let totalMoney = 0
-    for(let i=0;i<carts.length;i++){
+    carts.forEach((v, i) => {
       if(carts[i].checked){
         totalMoney += carts[i].quantity*carts[i].price
       }
-    }
+    })
     //console.log(totalMoney)
     return totalMoney
   },
@@ -113,7 +115,7 @@ Page({
         })
       }
       else{
-        if(app.globalData.allCarts.every((item)=>{return item.checked == false})){
+        if(app.globalData.allCarts.every((item)=>{ return item.checked == false })){
           wx.showToast({
             title: '请勾选需要购买的商品',
             icon: "none",

@@ -11,8 +11,8 @@
         <view class="row">
           <text class="sku-price">￥{{item.price}}</text>
           <view class="quantity-position">
-            <image bindtap="{{item.quantity>=0&item.quantity<20 ? 'plus' : '' }}" class="image-plus" src="/scr/img/icon/加.png" data-quantityIndex="{{index}}"></image>
-            <image bindtap="{{item.quantity>0 ? 'minus' : '' }}" class="image-minus" src="/scr/img/icon/减.png" data-quantityIndex="{{index}}"></image>
+            <image bindtap="plus" class="image-plus" src="/scr/img/icon/加.png" data-quantityIndex="{{index}}"></image>
+            <image bindtap="minus" class="image-minus" src="/scr/img/icon/减.png" data-quantityIndex="{{index}}"></image>
             <text class="quantity">{{item.quantity}}</text>
           </view>
         </view>

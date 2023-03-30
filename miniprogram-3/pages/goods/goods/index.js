@@ -53,13 +53,13 @@ Page({
   plus(){
     let that = this
     this.setData({
-      quantity : that.data.quantity + 1
+      quantity : that.data.quantity++
     })
   },
   minus(){
     let that = this
     this.setData({
-      quantity : that.data.quantity - 1
+      quantity : that.data.quantity--
     })
   },
   toBuy(){

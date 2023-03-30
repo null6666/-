@@ -1,6 +1,6 @@
 <view>
   <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-    <image class="avatar" src="{{avatarUrl}}"></image>
+    <image class="avatar" src="{{avatarUrl || 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0' }}"></image>
   </button> 
   <form>
     <view>

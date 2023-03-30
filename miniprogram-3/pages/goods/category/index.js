@@ -133,11 +133,12 @@ Page({
     curIndex: 0
   }, 
   switchLeftTab(e) { 
-    let id = e.target.dataset.id
-    let index = parseInt(e.target.dataset.index)
+    let { id, index } = e.target.dataset
+    // let index = parseInt(e.target.dataset.index)
+    // let index = +e.target.dataset.index
     this.setData({
       curNav: id,
-      curIndex: index
+      curIndex: +index
     })
   }
 })  

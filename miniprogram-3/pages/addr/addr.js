@@ -7,27 +7,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    flag1 : false,
-    flag2 : true,
     addr : []
   },
   addAddress(){
     wx.chooseAddress({
       success (res) {
-        app.globalData.addr.push(res)
+        app.globalData.addr = [res]
+        this.setData({
+          addr : [res]
+        })
       }
-    })
-    this.setData({
-      flag1 : true,
-      flag2 : false,
-      addr : app.globalData.addr
     })
   },
   changeAddress(){
     wx.chooseAddress({
       success (res) {
-        app.globalData.addr.pop()
-        app.globalData.addr.push(res)
+        // app.globalData.addr.pop()
+        // app.globalData.addr.push(res)
+        app.globalData.addr = [res]
+
         //console.log(app.globalData.addr)
       }
     })
@@ -71,7 +69,6 @@ Page({
         if(res.data[0].addr.length){
           that.setData({
             flag1 : true,
-            flag2 : false,
             addr : app.globalData.addr
           })
         }

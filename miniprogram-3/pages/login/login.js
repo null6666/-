@@ -1,12 +1,9 @@
-var app = getApp()
-const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+const app = getApp()
 let db = wx.cloud.database()
 Page({
   data: {
-    avatarUrl : defaultAvatarUrl,
+    avatarUrl : "",
     nickname : "",
-    getImg : false,
-    getName : false,
   },
   onLoad() {
     wx.setNavigationBarTitle({
@@ -17,20 +14,18 @@ Page({
     const { avatarUrl } = e.detail 
     this.setData({
       avatarUrl,
-      getImg : true
     })
   },
   switch(e){
     //console.log(e.detail.value)
     this.setData({
       nickname : e.detail.value,
-      getName : true
     })
     app.globalData.nickname = e.detail.value
     //console.log(app.globalData.nickname)
   },
   login(){
-    if (this.data.getImg == false | this.data.getName == false) {
+    if (!this.data.avatarUrl || !this.data.nickname) {
       wx.showToast({
         title: '请补全信息',
         icon: "none",
